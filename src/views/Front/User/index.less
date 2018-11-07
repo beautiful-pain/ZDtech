@@ -1,0 +1,81 @@
+@imgB: '../../../assets/background/';
+@imgI: '../../../assets/icon/';
+
+.red {
+  background: #e74c3c;
+}
+.ivu-form-item {
+  margin-bottom: 20px;
+}
+
+#introduce {
+  background-image: url("@{imgB}UserBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+  .contentPadding {
+    padding: 2rem 0;
+    margin-top: 4%;
+
+    .UserLogo {
+      width: 20rem;
+      margin-bottom: 2rem;
+    }
+
+    /deep/.ivu-card-body {
+      overflow: hidden;
+      padding: 1rem 1rem 0 1rem;
+
+      .head {
+        margin-top: -8rem;
+        margin-bottom: 5vh;
+        display: flex;
+        justify-content: center;
+
+        .circle {
+          position: relative;
+          vertical-align: middle;
+          background: #e74c3c;
+          height: 12rem;
+          width: 12rem;
+          border-radius: 50%;
+
+          img {
+            position: absolute;
+            width: 7rem;
+            left: 0;
+            right: 0;
+            top: 6rem;
+            bottom: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+/deep/.ivu-card-body {
+  padding: 2rem;
+
+  .ivu-input {
+    height: 40px;
+  }
+}
+
+/deep/.dv_handler {
+  height: 40px!important;
+  width: 40px!important;
+}
+@media (max-width:520px) {
+  #introduce {
+    .contentPadding {
+      .UserLogo {
+        width: 14rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

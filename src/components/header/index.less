@@ -1,0 +1,42 @@
+#header {
+  background: #515a6e;
+
+  .ivu-layout-content {
+    .ivu-layout-header {
+      .ivu-menu-horizontal.ivu-menu-light:after {
+        height: 0;
+      }
+
+      .ivu-menu-light {
+        background: transparent;
+
+        .layout-logo {
+          width: 100px;
+          height: 30px;
+          line-height: 30px;
+          color: white;
+          border-radius: 3px;
+          float: left;
+          position: relative;
+          top: 15px;
+          left: 20px;
+        }
+
+        .layout-nav {
+          width: 620px;
+          padding-left: 2rem;
+          margin: 0 0 0 auto;
+
+          .ivu-menu-item {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width:1500px) {
+  .ivu-layout-content {
+    width: 1500px;
+  }
+}

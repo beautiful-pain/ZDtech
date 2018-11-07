@@ -1,0 +1,19 @@
+// /deep/
+// less的深度作用域
+
+#why {
+  .ivu-row {
+    .ivu-col {
+      .ivu-tabs /deep/ .ivu-tabs-bar {
+        .ivu-tabs-nav {
+          float: none;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+.ivu-tabs-nav {
+  background: red;
+}
