@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const vuxLoader = require('vux-loader')
 
 const path = require('path')
 
@@ -25,8 +26,11 @@ module.exports = {
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('#', resolve('src/components'))
   },
-
-  configureWebpack: {
+  configureWebpack: config => {
+    require('vux-loader').merge(config, {
+      options: {},
+      plugins: ['vux-ui']
+    })
     optimization: {
       minimizer: [
         new UglifyJsPlugin({
@@ -46,7 +50,7 @@ module.exports = {
 
   baseUrl: BASE_URL,
   lintOnSave: false,
-  outputDir: 'beesbit',
+  outputDir: 'ZDtech',
   assetsDir: 'assest',
   pluginOptions: { // 第三方插件配置
   },

@@ -1,7 +1,5 @@
 # ZDtech
 
-# 智贷科技微信公众号
-
 ## Project setup
 
     npm install
@@ -23,4 +21,5 @@
     npm run lint
 
 # ZDtech
+
 # ZDtech
