@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const vuxLoader = require('vux-loader');
 
 const path = require('path')
 
@@ -26,6 +27,9 @@ module.exports = {
       .set('#', resolve('src/components'))
   },
   configureWebpack: config => {
+    vuxLoader.merge(config, {
+      plugins: ['vux-ui']
+    })
     optimization: {
       minimizer: [
         new UglifyJsPlugin({
