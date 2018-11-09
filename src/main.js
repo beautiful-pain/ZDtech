@@ -1,35 +1,33 @@
 import Vue from 'vue'
-import iView from 'iview'
 import axios from 'axios'
 import store from './store'
 import App from './App.vue'
 import vuex from 'vuex'
+import iView from 'iview'
 // import vux from 'vux'
 import router from './router'
-
+import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import './registerServiceWorker'
 import 'swiper/dist/css/swiper.css'
-import 'iview/dist/styles/iview.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'font-awesome/css/font-awesome.css'
-import '../theme/index.less';
 import './index.less'
+
+import Button from 'mint-ui/lib/button';
+import {
+  Progress
+} from 'mint-ui';
+
+Vue.component(Progress.name, Progress);
+Vue.component(Button.name, Button);
 
 // require styles
 import VueAxios from 'vue-axios'
 
-import {
-  Button,
-  Cell
-} from 'mint-ui'
-
-Vue.component(Button.name, Button)
-Vue.component(Cell.name, Cell)
-
 Vue.config.productionTip = false
 
-Vue.use(iView, axios, VueAwesomeSwiper, VueAxios, vuex)
+Vue.use(iView, axios, VueAwesomeSwiper, VueAxios, vuex, Mint)
 new Vue({
   router,
   store,

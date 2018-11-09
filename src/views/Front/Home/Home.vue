@@ -1,13 +1,11 @@
 
 <template>
 <div>
-  <mt-button @click.native="handleClick">按钮</mt-button>
+  <mt-button type="primary">primary</mt-button>
+  <mt-progress :value="20" :bar-height="5"></mt-progress>
 </div>
 </template>
 <script>
-import {
-  Header
-} from 'mint-ui'
 export default {
   data() {
     return {
