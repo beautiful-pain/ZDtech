@@ -1,23 +1,25 @@
 
 <template>
 <div>
-  <cell-box is-link>
-    <!-- anything -->123
-  </cell-box>
+  <mt-button @click.native="handleClick">按钮</mt-button>
 </div>
 </template>
 <script>
 import {
-  CellBox
-} from 'vux'
-
+  Header
+} from 'mint-ui'
 export default {
   data() {
-    return {}
+    return {
+      value: false
+    }
   },
-  components: {
-    CellBox,
+  methods: {
+    handleClick() {
+
+    }
   },
+  components: {},
   mounted() {}
 }
 </script>
