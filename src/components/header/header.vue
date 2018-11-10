@@ -3,7 +3,7 @@
   <Content class="noPadding">
     <Header>
       <Menu mode="horizontal" active-name="1" @on-select="select">
-        <div class="layout-logo" @click="BackHome">智贷科技</div>
+        <div class="layout-logo" @click="BackHome">智贷金管家</div>
         <div class="layout-nav">
           <MenuItem v-for="(item,index) in List" :to="{name:item.path,query:{id:index}}" :name="index">{{item.name}}
           </MenuItem>

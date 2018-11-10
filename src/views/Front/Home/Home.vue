@@ -11,7 +11,7 @@
   <group class="group">
     <grid :show-lr-borders="false" :cols="4">
       <grid-item :label="item.name" v-for="(item,index) in GirdList" :key="index">
-        <img slot="icon" src="https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg">
+        <img slot="icon" v-bind:src="item.img">
       </grid-item>
     </grid>
   </group>
@@ -127,13 +127,13 @@ export default {
       },
       showMenus: false,
       list: [{
-        src: 'http://somedomain.somdomain/x.jpg',
-        fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        src: 'http://img.hb.aicdn.com/571d3c658f0871dd181ff8285b29a6b51c0076241e558-8QvaTv_fw658',
+        fallbackSrc: 'http://img.hb.aicdn.com/571d3c658f0871dd181ff8285b29a6b51c0076241e558-8QvaTv_fw658',
         title: '标题一',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
         url: '/component/cell'
       }, {
-        src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        src: 'http://img.hb.aicdn.com/571d3c658f0871dd181ff8285b29a6b51c0076241e558-8QvaTv_fw658',
         title: '标题二',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
         url: {
@@ -162,29 +162,29 @@ export default {
       }],
       GirdList: [{
           name: '信用卡',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/xinyongka.svg'),
         },
         {
           name: '网贷',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/daikuan.svg'),
         }, {
           name: '保险',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/baoxian.svg'),
         }, {
           name: '支付',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/zhifu.svg'),
         }, {
           name: '车抵贷',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/chedidai.svg'),
         }, {
           name: '房抵贷',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/fangdidai.svg'),
         }, {
           name: '进度查询',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/chaxunjindu.svg'),
         }, {
           name: '个人中心',
-          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+          img: require('../../../assets/icon/gerenzhongxin.svg'),
         },
       ],
       DailiList: [{

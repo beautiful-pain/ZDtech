@@ -9,13 +9,13 @@ const router = new Router({
     name: 'home',
     component: home,
     meta: {
-      title: '智贷科技云算力'
+      title: '智贷金管家'
     }
   }, ]
 })
 
 router.beforeEach((to, from, next) => { /* 全局前置钩子 */
-  document.title = to.meta.title || '智贷科技云算力'
+  document.title = to.meta.title || '智贷金管家'
   next()
 })
 router.beforeResolve((to, from, next) => { /* 全局解析守卫 */
