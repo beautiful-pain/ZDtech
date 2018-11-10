@@ -1,7 +1,7 @@
 <template>
 <div>
   <x-header :right-options="{showMore: true}" @on-click-more="showMenus = true" style="width:100%;position:absolute;left:0;top:0;z-index:100;">智贷金管家</x-header>
-  <swiper loop auto :list="SwiperList"></swiper>
+  <swiper loop auto :list="SwiperList" style="margin-top:3rem;"></swiper>
   <div class="title">
     <h2>财富优选</h2>
     <div class="title2">
@@ -16,7 +16,7 @@
     </grid>
   </group>
   <div class="title">
-    <h2>财富优选</h2>
+    <h2>实时收入展示</h2>
     <div class="title2">
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
@@ -40,6 +40,26 @@
       </marquee>
     </cell>
   </group>
+  <div class="title">
+    <h2>我的代理</h2>
+    <div class="title2">
+      <span>尊享财富尊选,开启梦想生活</span>
+    </div>
+  </div>
+  <group class="group">
+    <grid :show-lr-borders="false" :cols="3">
+      <grid-item :label="item.name" v-for="(item,index) in DailiList" :key="index">
+        <img slot="icon" src="https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg">
+      </grid-item>
+    </grid>
+  </group>
+  <div class="title">
+    <h2>今日热门贷款推荐</h2>
+    <div class="title2">
+      <span>尊享财富尊选,开启梦想生活</span>
+    </div>
+  </div>
+  <panel header="123" :footer="footer" :list="list" type="5"></panel>
   <tabbar>
     <tabbar-item>
       <img slot="icon" src="https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun1.svg">
@@ -76,7 +96,8 @@ import {
   ButtonTabItem,
   Marquee,
   MarqueeItem,
-  ViewBox
+  ViewBox,
+  Panel,
 } from 'vux'
 export default {
   components: {
@@ -95,6 +116,7 @@ export default {
     Marquee,
     MarqueeItem,
     ViewBox,
+    Panel,
   },
   data() {
     return {
@@ -104,6 +126,30 @@ export default {
         menu2: 'Choose from photos'
       },
       showMenus: false,
+      list: [{
+        src: 'http://somedomain.somdomain/x.jpg',
+        fallbackSrc: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        title: '标题一',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        url: '/component/cell'
+      }, {
+        src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+        title: '标题二',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+        url: {
+          path: '/component/radio',
+          replace: false
+        },
+        meta: {
+          source: '来源信息',
+          date: '时间',
+          other: '其他信息'
+        }
+      }],
+      footer: {
+        title: "页脚",
+        url: 'http://vux.li'
+      },
       SwiperList: [{
         url: 'javascript:',
         img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vvsr72j20p00gogo2.jpg',
@@ -140,6 +186,18 @@ export default {
           name: '个人中心',
           img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
         },
+      ],
+      DailiList: [{
+          name: '发展代理',
+          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+        },
+        {
+          name: '已邀代理',
+          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+        }, {
+          name: '我的客户',
+          img: 'https://static-portal.jdcloud.com/jcloud/jc/2.1.0/widget/jdc-product/i/fun4.svg',
+        }
       ],
       marquee: [{
         name: '信用卡',
