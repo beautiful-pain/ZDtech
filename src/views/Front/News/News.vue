@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="title">
-    <h2>财富优选</h2>
+    <h2>咨询中心</h2>
     <div class="title2">
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
@@ -86,7 +86,7 @@ export default {
   },
   data() {
     return {
-      tab: 'center',
+      tab: 'news',
       imgUrl: {
         img1: require('../../../../public/img/icon/tab_shouye_default.svg'),
         img2: require('../../../../public/img/icon/tab_shouye_select.svg'),
@@ -193,7 +193,8 @@ export default {
       }]
     }
   },
-  methods: {},
+  methods: {
+  },
   mounted() {}
 }
 </script>
@@ -249,5 +250,14 @@ export default {
 
 .weui-grids {
     background-color: #fff;
+}
+
+.weui-tabbar {
+    .weui-bar__item_on {
+        span {
+            color: #00b2ff;
+        }
+    }
+
 }
 </style>

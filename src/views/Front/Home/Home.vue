@@ -89,29 +89,11 @@
       常见问题常见问题常见问题常见问题常
     </cell-box>
   </group>
-  <tabbar v-model="tabbar" @on-index-change="tabbarChange">
-    <tabbar-item link="/">
-      <img slot="icon" :src=" tabbar===0? imgUrl.img2:imgUrl.img1">
-      <span slot="label">首页</span>
-    </tabbar-item>
-    <tabbar-item link="/" show-dot>
-      <img slot="icon" :src=" tabbar===1? imgUrl.img4:imgUrl.img3">
-      <span slot="label">资讯</span>
-    </tabbar-item>
-    <tabbar-item link="center">
-      <img slot="icon" :src=" tabbar===2? imgUrl.img6:imgUrl.img5">
-      <span slot="label">个人中心</span>
-    </tabbar-item>
-  </tabbar>
-  <div>
-    <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
-  </div>
+  <Footer :tab="tab"></Footer>
 </div>
 </template>
 <script>
 import {
-  Tabbar,
-  TabbarItem,
   Group,
   Cell,
   Swiper,
@@ -129,10 +111,9 @@ import {
   Panel,
   CellBox
 } from 'vux'
+import Footer from '#/footer'
 export default {
   components: {
-    Tabbar,
-    TabbarItem,
     Group,
     Cell,
     Swiper,
@@ -147,19 +128,12 @@ export default {
     MarqueeItem,
     ViewBox,
     Panel,
-    CellBox
+    CellBox,
+    Footer,
   },
   data() {
     return {
-      imgUrl: {
-        img1: require('../../../../public/img/icon/tab_shouye_default.svg'),
-        img2: require('../../../../public/img/icon/tab_shouye_select.svg'),
-        img3: require('../../../../public/img/icon/tab_zixunzhongxin_default.svg'),
-        img4: require('../../../../public/img/icon/tab_zixunzhongxin_select.svg'),
-        img5: require('../../../../public/img/icon/tab_gerenzhongxin_default.svg'),
-        img6: require('../../../../public/img/icon/tab_gerenzhongxin_select.svg'),
-      },
-      tabbar: 0,
+      tab: 'home',
       value: false,
       menus: {
         menu1: '操作1',
@@ -258,12 +232,7 @@ export default {
       }]
     }
   },
-  methods: {
-    tabbarChange(val) {
-      this.tabbar = val
-      console.log(val);
-    }
-  },
+  methods: {},
   mounted() {}
 }
 </script>

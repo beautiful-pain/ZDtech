@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const home = r => require.ensure([], () => r(require('./views/Front/Home/Home.vue')), 'home')
 const center = r => require.ensure([], () => r(require('./views/Front/Center/Center.vue')), 'center')
+const news = r => require.ensure([], () => r(require('./views/Front/News/News.vue')), 'news')
 Vue.use(Router)
 
 const router = new Router({
@@ -19,6 +20,14 @@ const router = new Router({
       component: center,
       meta: {
         title: '个人中心'
+      }
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: news,
+      meta: {
+        title: '咨询中心'
       }
     },
   ]

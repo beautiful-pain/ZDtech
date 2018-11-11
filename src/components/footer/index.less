@@ -1,7 +1,22 @@
-#footer {
-  background: #515a6e;
-  .layout-footer-center {
-    background:transparent;
-    color: white;
+.weui-tabbar {
+  background: white;
+
+  .weui-tabbar__item {
+    padding: 10px 0 0 ;
+    /deep/.weui-tabbar__icon {
+      width: 20px;
+      height: 20px;
+    }
   }
+
+  .active {
+    span {
+      color: #0098e1;
+      font-weight: 900;
+    }
+  }
+}
+
+/deep/.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+  color: #999;
 }
