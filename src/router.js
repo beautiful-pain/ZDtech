@@ -1,17 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 const home = r => require.ensure([], () => r(require('./views/Front/Home/Home.vue')), 'home')
+const center = r => require.ensure([], () => r(require('./views/Front/Center/Center.vue')), 'center')
 Vue.use(Router)
 
 const router = new Router({
   routes: [{
-    path: '/',
-    name: 'home',
-    component: home,
-    meta: {
-      title: '智贷金管家'
-    }
-  }, ]
+      path: '/',
+      name: 'home',
+      component: home,
+      meta: {
+        title: '智贷金管家'
+      }
+    },
+    {
+      path: '/center',
+      name: 'center',
+      component: center,
+      meta: {
+        title: '个人中心'
+      }
+    },
+  ]
 })
 
 router.beforeEach((to, from, next) => { /* 全局前置钩子 */

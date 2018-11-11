@@ -1,20 +1,12 @@
 <template>
 <div>
-  <x-header :right-options="{showMore: true}" @on-click-more="showMenus = true" style="width:100%;position:absolute;left:0;top:0;z-index:100;">智贷金管家</x-header>
-  <swiper loop auto :list="SwiperList" style="margin-top:3rem;"></swiper>
+  <x-header :right-options="{showMore: true}" @on-click-more="showMenus = true" style="width:100%;position:absolute;left:0;top:0;z-index:100;">个人中心</x-header>
   <div class="title">
     <h2>财富优选</h2>
     <div class="title2">
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <group class="group">
-    <grid :show-lr-borders="false" :cols="4">
-      <grid-item :label="item.name" v-for="(item,index) in GirdList" :key="index">
-        <img slot="icon" v-bind:src="item.img">
-      </grid-item>
-    </grid>
-  </group>
   <div class="title">
     <h2>实时收入展示</h2>
     <div class="title2">
@@ -53,43 +45,6 @@
       </grid-item>
     </grid>
   </group>
-  <div class="title">
-    <h2>今日热门贷款推荐</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <panel header="" :footer="footer" :list="list" type="1"></panel>
-  <div class="title">
-    <h2>智贷金课堂</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <group class="group">
-    <grid :show-lr-borders="false" :cols="3">
-      <grid-item :label="item.name" v-for="(item,index) in MoreList" :key="index">
-        <img slot="icon" :src="item.img">
-      </grid-item>
-    </grid>
-  </group>
-  <div class="title">
-    <h2>常见问题</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <group>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-  </group>
   <tabbar v-model="tabbar" @on-index-change="tabbarChange">
     <tabbar-item link="/">
       <img slot="icon" :src=" tabbar===0? imgUrl.img2:imgUrl.img1">
@@ -103,6 +58,7 @@
       <img slot="icon" :src=" tabbar===2? imgUrl.img6:imgUrl.img5">
       <span slot="label">个人中心</span>
     </tabbar-item>
+  </tabbar>
   </tabbar>
   <div>
     <actionsheet :menus="menus" v-model="showMenus" show-cancel></actionsheet>
@@ -128,7 +84,6 @@ import {
   MarqueeItem,
   ViewBox,
   Panel,
-  CellBox
 } from 'vux'
 export default {
   components: {
@@ -148,7 +103,6 @@ export default {
     MarqueeItem,
     ViewBox,
     Panel,
-    CellBox
   },
   data() {
     return {
