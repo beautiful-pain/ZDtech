@@ -1,7 +1,6 @@
 <template>
 <div>
-  <x-header :right-options="{showMore: true}" @on-click-more="showMenus = true" style="width:100%;position:absolute;left:0;top:0;z-index:100;">智贷金管家</x-header>
-  <swiper loop auto :list="SwiperList" style="margin-top:3rem;"></swiper>
+  <swiper loop auto :list="SwiperList"></swiper>
   <div class="title">
     <h2>财富优选</h2>
     <div class="title2">
@@ -271,63 +270,4 @@ export default {
 
 <style scoped lang="less">
 @import './index.less';
-
-.title {
-    padding: 1rem;
-    h2 {
-        text-align: left;
-        font-size: 18px;
-        font-weight: 800;
-    }
-    .title2 {
-        text-align: left;
-        font-size: 12px;
-    }
-}
-
-.vux-slider {
-    text-align: left;
-}
-
-.group {
-    padding: 0.5rem;
-
-}
-/deep/.weui-cells {
-    margin-top: 0;
-}
-
-.weui-media-box_appmsg .weui-media-box__bd {
-    text-align: left;
-}
-
-.vux-header .vux-header-left button,
-.vux-header .vux-header-right a,
-.vux-header .vux-header-right button,
-/deep/.vux-header .vux-header-left a {
-    color: white;
-}
-
-.vux-header {
-    background: #00b2ff;
-}
-
-.grid-center {
-    display: block;
-    text-align: center;
-    color: #666;
-}
-
-.weui-grids {
-    background-color: #fff;
-}
-
-.weui-tabbar {
-    .weui-bar__item_on {
-        span {
-            color: #00b2ff;
-        }
-    }
-
-}
 </style>

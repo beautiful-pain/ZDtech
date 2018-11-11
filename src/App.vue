@@ -21,8 +21,8 @@ export default {
 }
 </script>
 <style lang="less">
-*{
-  text-decoration: none;
+* {
+    text-decoration: none;
 }
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -31,6 +31,7 @@ export default {
     text-align: center;
     color: #2c3e50;
     vertical-align: middle;
+    background: #f7f7fa;
 }
 body,
 html {
