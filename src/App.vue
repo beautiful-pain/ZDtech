@@ -31,7 +31,7 @@ export default {
     text-align: center;
     color: #2c3e50;
     vertical-align: middle;
-    background: #f7f7fa;
+    background: #f1f1f1;
 }
 body,
 html {

@@ -2,11 +2,11 @@
 <tabbar v-model="tabbar" @on-item-click="check">
   <tabbar-item link="/" :class="tab==='home'?'active':''">
     <img slot="icon" :src=" tab==='home'? imgUrl.img2:imgUrl.img1">
-    <span slot="label">首页</span>
+    <span slot="label">智贷金管家</span>
   </tabbar-item>
   <tabbar-item :link="{name:'news'}" show-dot :class="tab==='news'?'active':''">
     <img slot="icon" :src=" tab==='news'? imgUrl.img4:imgUrl.img3">
-    <span slot="label">资讯</span>
+    <span slot="label">推广产品</span>
   </tabbar-item>
   <tabbar-item :link="{name:'center'}" :class="tab==='center'?'active':''">
     <img slot="icon" :src=" tab==='center'? imgUrl.img6:imgUrl.img5">

@@ -23,19 +23,19 @@
   <group>
     <cell>
       <marquee>
-        <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">{{ '客户提交了人人查产品,获得了9000元收入'}} {{i}}</marquee-item>
+        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
       </marquee>
       <marquee>
-        <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">{{ '客户提交了人人查产品,获得了9000元收入'}} {{i}}</marquee-item>
+        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
       </marquee>
       <marquee>
-        <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">{{ '客户提交了人人查产品,获得了9000元收入'}} {{i}}</marquee-item>
+        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
       </marquee>
       <marquee>
-        <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">{{ '客户提交了人人查产品,获得了9000元收入'}} {{i}}</marquee-item>
+        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
       </marquee>
       <marquee>
-        <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">{{ '客户提交了人人查产品,获得了9000元收入'}} {{i}}</marquee-item>
+        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
       </marquee>
     </cell>
   </group>
@@ -89,6 +89,7 @@
       常见问题常见问题常见问题常见问题常
     </cell-box>
   </group>
+  <Slogen></Slogen>
   <Footer :tab="tab"></Footer>
 </div>
 </template>
@@ -109,9 +110,10 @@ import {
   MarqueeItem,
   ViewBox,
   Panel,
-  CellBox
+  CellBox,
 } from 'vux'
 import Footer from '#/footer'
+import Slogen from '#/slogen'
 export default {
   components: {
     Group,
@@ -130,6 +132,7 @@ export default {
     Panel,
     CellBox,
     Footer,
+    Slogen
   },
   data() {
     return {

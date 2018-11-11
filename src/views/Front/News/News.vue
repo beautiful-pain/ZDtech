@@ -45,6 +45,7 @@
     </grid>
   </group>
   <Footer :tab="tab"></Footer>
+  <Slogen></Slogen>
 </div>
 </template>
 <script>
@@ -66,6 +67,7 @@ import {
   Panel,
 } from 'vux'
 import Footer from '#/footer'
+import Slogen from '#/slogen'
 export default {
   components: {
     Group,
@@ -82,7 +84,8 @@ export default {
     MarqueeItem,
     ViewBox,
     Panel,
-    Footer
+    Footer,
+    Slogen
   },
   data() {
     return {
@@ -193,8 +196,7 @@ export default {
       }]
     }
   },
-  methods: {
-  },
+  methods: {},
   mounted() {}
 }
 </script>
