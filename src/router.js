@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const home = r => require.ensure([], () => r(require('./views/home/home.vue')), 'home')
-const xinyongka = r => require.ensure([], () => r(require('./views/home/children/xinyongka.vue')), 'xinyongka')
-const center = r => require.ensure([], () => r(require('./views/center/center.vue')), 'center')
-const news = r => require.ensure([], () => r(require('./views/news/news.vue')), 'news')
+const home = r => require.ensure([], () => r(require('./views/home/home')), 'home')
+const credit = r => require.ensure([], () => r(require('./views/credit/credit')), 'credit')
+const loans = r => require.ensure([], () => r(require('./views/loans/loans')), 'loans')
+const xinyongka = r => require.ensure([], () => r(require('./views/home/children/xinyongka')), 'xinyongka')
+const center = r => require.ensure([], () => r(require('./views/center/center')), 'center')
+const news = r => require.ensure([], () => r(require('./views/news/news')), 'news')
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
   routes: [{
       path: '/',
-      name: 'home',
       component: home,
       meta: {
         title: '智贷金管家'
@@ -33,20 +34,28 @@ const router = new Router({
       }]
     },
     {
+      path: '/credit',
+      name: 'credit',
+      component: credit,
+      meta: {
+        title: '信用卡申请'
+      },
+    },
+    {
+      path: '/loans',
+      name: 'loans',
+      component: loans,
+      meta: {
+        title: '网贷超市'
+      },
+    },
+    {
       path: '/center',
       name: 'center',
       component: center,
       meta: {
         title: '个人中心'
       },
-      children: [{
-        path: 'xinyongka',
-        name: 'xinyongka',
-        component: xinyongka,
-        meta: {
-          title: '个人中心'
-        }
-      }]
     },
     {
       path: '/news',

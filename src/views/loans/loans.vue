@@ -1,57 +1,21 @@
 <template>
 <div>
-  <swiper loop auto :list="SwiperList"></swiper>
+  <div class="box">
+    <swiper loop auto :list="SwiperList"></swiper>
+  </div>
   <div class="title">
-    <h2>财富优选</h2>
+    <h2>推荐银行</h2>
     <div class="title2">
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <transition name="router-slid" mode="out-in">
-    <router-view></router-view>
-  </transition>
-  <group class="group">
-    <grid :show-lr-borders="false" :cols="4">
-      <grid-item :label="item.name" :link="{path:item.link}" v-for="(item,index) in GirdList" :key="index">
-        <img slot="icon" v-bind:src="item.img">
-      </grid-item>
-    </grid>
-  </group>
-  <div class="title">
-    <h2>实时收入展示</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <group>
-    <cell>
-      <marquee>
-        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
-      </marquee>
-      <marquee>
-        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
-      </marquee>
-      <marquee>
-        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
-      </marquee>
-      <marquee>
-        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
-      </marquee>
-      <marquee>
-        <marquee-item v-for="i in 5" :key="i">{{ '客户提交了人人查产品,获得了9000元收入'}}</marquee-item>
-      </marquee>
-    </cell>
-  </group>
-  <div class="title">
-    <h2>我的代理</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
+  <tab>
+    <tab-item v-for="n in 8" :key="n" :selected="n===1">已发货{{ n }}</tab-item>
+  </tab>
   <group class="group">
     <grid :show-lr-borders="false" :cols="3">
-      <grid-item :label="item.name" v-for="(item,index) in DailiList" :key="index">
-        <img slot="icon" :src="item.img">
+      <grid-item :label="item.name" :link="{path:item.link}" v-for="(item,index) in GirdList" :key="index">
+        <img slot="icon" v-bind:src="item.img">
       </grid-item>
     </grid>
   </group>
@@ -62,39 +26,11 @@
     </div>
   </div>
   <panel header="" :footer="footer" :list="list" type="1"></panel>
-  <div class="title">
-    <h2>智贷金课堂</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <group class="group">
-    <grid :show-lr-borders="false" :cols="3">
-      <grid-item :label="item.name" v-for="(item,index) in MoreList" :key="index">
-        <img slot="icon" :src="item.img">
-      </grid-item>
-    </grid>
-  </group>
-  <div class="title">
-    <h2>常见问题</h2>
-    <div class="title2">
-      <span>尊享财富尊选,开启梦想生活</span>
-    </div>
-  </div>
-  <group>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-    <cell-box>
-      常见问题常见问题常见问题常见问题常
-    </cell-box>
-  </group>
   <Slogen></Slogen>
-  <Footer :tab="tab"></Footer>
-
+  <Backbar></Backbar>
+  <transition name="router-slid" mode="out-in">
+    <router-view></router-view>
+  </transition>
 </div>
 </template>
 <script>
@@ -104,20 +40,16 @@ import {
   Swiper,
   Grid,
   GridItem,
-  GroupTitle,
-  XHeader,
-  Actionsheet,
-  TransferDom,
   ButtonTab,
   ButtonTabItem,
-  Marquee,
-  MarqueeItem,
   ViewBox,
   Panel,
   CellBox,
+  Tab,
+  TabItem
 } from 'vux'
-import Footer from '#/footer'
 import Slogen from '#/slogen'
+import Backbar from '#/backbar'
 export default {
   components: {
     Group,
@@ -125,18 +57,15 @@ export default {
     Swiper,
     Grid,
     GridItem,
-    GroupTitle,
-    XHeader,
-    Actionsheet,
     ButtonTab,
     ButtonTabItem,
-    Marquee,
-    MarqueeItem,
     ViewBox,
     Panel,
     CellBox,
-    Footer,
-    Slogen
+    Tab,
+    TabItem,
+    Slogen,
+    Backbar,
   },
   data() {
     return {
@@ -190,7 +119,33 @@ export default {
         },
         {
           name: '网贷',
-          link: 'loans',
+          link: 'credit',
+          img: require('../../../public/img/icon/daikuan.svg'),
+        }, {
+          name: '保险',
+          link: 'credit',
+          img: require('../../../public/img/icon/baoxian.svg'),
+        }, {
+          name: '信用卡',
+          link: 'credit',
+          img: require('../../../public/img/icon/xinyongka.svg'),
+        },
+        {
+          name: '网贷',
+          link: 'credit',
+          img: require('../../../public/img/icon/daikuan.svg'),
+        }, {
+          name: '保险',
+          link: 'credit',
+          img: require('../../../public/img/icon/baoxian.svg'),
+        }, {
+          name: '信用卡',
+          link: 'credit',
+          img: require('../../../public/img/icon/xinyongka.svg'),
+        },
+        {
+          name: '网贷',
+          link: 'credit',
           img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '保险',
@@ -213,6 +168,11 @@ export default {
           link: 'credit',
           img: require('../../../public/img/icon/chaxunjindu.svg'),
         }, {
+          name: '个人中心',
+          link: 'credit',
+          img: require('../../../public/img/icon/gerenzhongxin.svg'),
+        },
+        {
           name: '个人中心',
           link: 'credit',
           img: require('../../../public/img/icon/gerenzhongxin.svg'),
