@@ -91,12 +91,12 @@ export default {
     return {
       tab: 'news',
       imgUrl: {
-        img1: require('../../../../public/img/icon/tab_shouye_default.svg'),
-        img2: require('../../../../public/img/icon/tab_shouye_select.svg'),
-        img3: require('../../../../public/img/icon/tab_zixunzhongxin_default.svg'),
-        img4: require('../../../../public/img/icon/tab_zixunzhongxin_select.svg'),
-        img5: require('../../../../public/img/icon/tab_gerenzhongxin_default.svg'),
-        img6: require('../../../../public/img/icon/tab_gerenzhongxin_select.svg'),
+        img1: require('../../../public/img/icon/tab_shouye_default.svg'),
+        img2: require('../../../public/img/icon/tab_shouye_select.svg'),
+        img3: require('../../../public/img/icon/tab_zixunzhongxin_default.svg'),
+        img4: require('../../../public/img/icon/tab_zixunzhongxin_select.svg'),
+        img5: require('../../../public/img/icon/tab_gerenzhongxin_default.svg'),
+        img6: require('../../../public/img/icon/tab_gerenzhongxin_select.svg'),
       },
       value: false,
       menus: {
@@ -105,12 +105,12 @@ export default {
       },
       showMenus: false,
       list: [{
-        src: require('../../../../public/img/icon/icon.png'),
+        src: require('../../../public/img/icon/icon.png'),
         title: '标题一',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
         url: '/component/cell'
       }, {
-        src: require('../../../../public/img/icon/icon.png'),
+        src: require('../../../public/img/icon/icon.png'),
         title: '标题二',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
         url: {
@@ -129,66 +129,66 @@ export default {
       },
       SwiperList: [{
         url: 'javascript:',
-        img: require('../../../../public/img/background/bg1.jpeg'),
+        img: require('../../../public/img/background/bg1.jpeg'),
         title: '智贷金管家'
       }, {
         url: 'javascript:',
-        img: require('../../../../public/img/background/bg2.jpeg'),
+        img: require('../../../public/img/background/bg2.jpeg'),
         title: '智贷金管家',
       }, {
         url: 'javascript:',
-        img: require('../../../../public/img/background/bg3.jpeg'),
+        img: require('../../../public/img/background/bg3.jpeg'),
         title: '智贷金管家',
       }],
       GirdList: [{
           name: '信用卡',
-          img: require('../../../../public/img/icon/xinyongka.svg'),
+          img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '网贷',
-          img: require('../../../../public/img/icon/daikuan.svg'),
+          img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '保险',
-          img: require('../../../../public/img/icon/baoxian.svg'),
+          img: require('../../../public/img/icon/baoxian.svg'),
         }, {
           name: '支付',
-          img: require('../../../../public/img/icon/zhifu.svg'),
+          img: require('../../../public/img/icon/zhifu.svg'),
         }, {
           name: '车抵贷',
-          img: require('../../../../public/img/icon/chedidai.svg'),
+          img: require('../../../public/img/icon/chedidai.svg'),
         }, {
           name: '房抵贷',
-          img: require('../../../../public/img/icon/fangdidai.svg'),
+          img: require('../../../public/img/icon/fangdidai.svg'),
         }, {
           name: '进度查询',
-          img: require('../../../../public/img/icon/chaxunjindu.svg'),
+          img: require('../../../public/img/icon/chaxunjindu.svg'),
         }, {
           name: '个人中心',
-          img: require('../../../../public/img/icon/gerenzhongxin.svg'),
+          img: require('../../../public/img/icon/gerenzhongxin.svg'),
         },
       ],
       DailiList: [{
           name: '发展代理',
-          img: require('../../../../public/img/icon/fazhandaili.svg'),
+          img: require('../../../public/img/icon/fazhandaili.svg'),
         },
         {
           name: '已邀代理',
-          img: require('../../../../public/img/icon/yiyaodaili.svg'),
+          img: require('../../../public/img/icon/yiyaodaili.svg'),
         }, {
           name: '我的客户',
-          img: require('../../../../public/img/icon/wodekehu.svg'),
+          img: require('../../../public/img/icon/wodekehu.svg'),
         }
       ],
       MoreList: [{
           name: '智贷课堂',
-          img: require('../../../../public/img/icon/zhidaiketang.svg'),
+          img: require('../../../public/img/icon/zhidaiketang.svg'),
         },
         {
           name: '帮助中心',
-          img: require('../../../../public/img/icon/bangzhuzhongxin.svg'),
+          img: require('../../../public/img/icon/bangzhuzhongxin.svg'),
         }, {
           name: '推广产品',
-          img: require('../../../../public/img/icon/tuiguangchanpin.svg'),
+          img: require('../../../public/img/icon/tuiguangchanpin.svg'),
         }
       ],
       marquee: [{
@@ -227,10 +227,6 @@ export default {
 }
 /deep/.weui-cells {
     margin-top: 0;
-}
-
-.weui-media-box_appmsg .weui-media-box__bd {
-    text-align: left;
 }
 
 .vux-header .vux-header-left button,

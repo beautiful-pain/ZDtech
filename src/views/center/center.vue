@@ -3,13 +3,16 @@
   <div class="box">
     <div class="caption">
       <div class="avatar">
-        <img src="../../../../public/img/icon/icon.png" width="100%">
+        <img src="../../../public/img/icon/icon.png" width="100%">
       </div>
       <h2>爱拼才会赢<badge text="专员"></badge></h2>
       <p>UID:2000020</p>
     </div>
   </div>
-
+  <router-link to="/center/xinyongka">123123</router-link>
+  <transition name="router-slid" mode="out-in">
+      <router-view></router-view>
+  </transition>
   <div class="box">
     <card>
       <div slot="content" class="card-demo-flex card-demo-content01">
@@ -119,56 +122,56 @@ export default {
       disabled: typeof navigator !== 'undefined' && /iphone/i.test(navigator.userAgent) && /ucbrowser/i.test(navigator.userAgent),
       GirdList_1: [{
           name: '订单明细',
-          img: require('../../../../public/img/icon/xinyongka.svg'),
+          img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '收支明细',
-          img: require('../../../../public/img/icon/daikuan.svg'),
+          img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '赚金币',
-          img: require('../../../../public/img/icon/baoxian.svg'),
+          img: require('../../../public/img/icon/baoxian.svg'),
         }, {
           name: '客户管理',
-          img: require('../../../../public/img/icon/zhifu.svg'),
+          img: require('../../../public/img/icon/zhifu.svg'),
         }
       ],
       GirdList_2: [{
           name: '邀请好友',
-          img: require('../../../../public/img/icon/xinyongka.svg'),
+          img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '代理授权',
-          img: require('../../../../public/img/icon/daikuan.svg'),
+          img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '专属海报',
-          img: require('../../../../public/img/icon/baoxian.svg'),
+          img: require('../../../public/img/icon/baoxian.svg'),
         }, {
           name: '专属客服',
-          img: require('../../../../public/img/icon/zhifu.svg'),
+          img: require('../../../public/img/icon/zhifu.svg'),
         }
       ],
       GirdList_3: [{
           name: '培训课堂',
-          img: require('../../../../public/img/icon/xinyongka.svg'),
+          img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '推广素材',
-          img: require('../../../../public/img/icon/daikuan.svg'),
+          img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '系统通知',
-          img: require('../../../../public/img/icon/baoxian.svg'),
+          img: require('../../../public/img/icon/baoxian.svg'),
         }, {
           name: '数据报表',
-          img: require('../../../../public/img/icon/zhifu.svg'),
+          img: require('../../../public/img/icon/zhifu.svg'),
         }
       ],
       GirdList_4: [{
           name: '帮助中心',
-          img: require('../../../../public/img/icon/xinyongka.svg'),
+          img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '收钱',
-          img: require('../../../../public/img/icon/daikuan.svg'),
+          img: require('../../../public/img/icon/daikuan.svg'),
         }
       ],
     }

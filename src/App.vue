@@ -1,7 +1,9 @@
 <template>
 <div id="app" style="height:100%;">
   <view-box ref="viewBox">
-    <router-view></router-view>
+    <transition name="router-slid" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </view-box>
 </div>
 </template>
