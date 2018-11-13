@@ -130,15 +130,15 @@ export default {
       SwiperList: [{
         url: 'javascript:',
         img: require('../../../public/img/background/bg1.jpeg'),
-        title: '智贷金管家'
+        title: '智银家'
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg2.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg3.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }],
       GirdList: [{
           name: '信用卡',

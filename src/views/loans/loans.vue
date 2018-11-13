@@ -9,9 +9,11 @@
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <tab>
-    <tab-item v-for="n in 8" :key="n" :selected="n===1">已发货{{ n }}</tab-item>
-  </tab>
+  <div class="box">
+    <tab>
+      <tab-item v-for="n in 8" :key="n" :selected="n===1">贷款{{ n }}</tab-item>
+    </tab>
+  </div>
   <group class="group">
     <grid :show-lr-borders="false" :cols="3">
       <grid-item :label="item.name" :link="{path:item.link}" v-for="(item,index) in GirdList" :key="index">
@@ -102,15 +104,15 @@ export default {
       SwiperList: [{
         url: 'javascript:',
         img: require('../../../public/img/background/bg1.jpeg'),
-        title: '智贷金管家'
+        title: '智银家'
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg2.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg3.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }],
       GirdList: [{
           name: '信用卡',

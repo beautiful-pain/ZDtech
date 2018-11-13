@@ -12,8 +12,9 @@
   </transition>
   <group class="group">
     <grid :show-lr-borders="false" :cols="4">
-      <grid-item :label="item.name" :link="{path:item.link}" v-for="(item,index) in GirdList" :key="index">
+      <grid-item @click.native="girdLink(item.link,item.vipGrid)" :class="item.vipGrid?'':'control'" :label="item.name" v-for="(item,index) in GirdList" :key="index">
         <img slot="icon" v-bind:src="item.img">
+        <span class="vip" v-if="item.vipGrid">VIP2</span>
       </grid-item>
     </grid>
   </group>
@@ -94,7 +95,7 @@
   </group>
   <Slogen></Slogen>
   <Footer :tab="tab"></Footer>
-
+  <toast v-model="toast" type="cancel">抱歉,您还不是VIP2等级用户</toast>
 </div>
 </template>
 <script>
@@ -115,6 +116,7 @@ import {
   ViewBox,
   Panel,
   CellBox,
+  Toast,
 } from 'vux'
 import Footer from '#/footer'
 import Slogen from '#/slogen'
@@ -136,11 +138,14 @@ export default {
     Panel,
     CellBox,
     Footer,
-    Slogen
+    Slogen,
+    Toast,
   },
   data() {
     return {
+      userVip: false,//用户VIP权限
       tab: 'home',
+      toast: false,
       value: false,
       menus: {
         menu1: '操作1',
@@ -173,48 +178,76 @@ export default {
       SwiperList: [{
         url: 'javascript:',
         img: require('../../../public/img/background/bg1.jpeg'),
-        title: '智贷金管家'
+        title: '智银家'
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg2.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }, {
         url: 'javascript:',
         img: require('../../../public/img/background/bg3.jpeg'),
-        title: '智贷金管家',
+        title: '智银家',
       }],
       GirdList: [{
           name: '信用卡',
           link: 'credit',
+          vipGrid: false,
           img: require('../../../public/img/icon/xinyongka.svg'),
         },
         {
           name: '网贷',
           link: 'loans',
+          vipGrid: false,
           img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '保险',
           link: 'credit',
+          vipGrid: false,
           img: require('../../../public/img/icon/baoxian.svg'),
         }, {
           name: '支付',
           link: 'credit',
+          vipGrid: false,
           img: require('../../../public/img/icon/zhifu.svg'),
+        }, {
+          name: '车信贷',
+          link: 'credit',
+          vipGrid: true,
+          img: require('../../../public/img/icon/chedidai.svg'),
+        }, {
+          name: '房信贷',
+          link: 'credit',
+          vipGrid: true,
+          img: require('../../../public/img/icon/fangdidai.svg'),
+        }, {
+          name: '过桥',
+          link: 'credit',
+          vipGrid: true,
+          img: require('../../../public/img/icon/chaxunjindu.svg'),
+        }, {
+          name: '不良资产',
+          link: 'credit',
+          vipGrid: true,
+          img: require('../../../public/img/icon/gerenzhongxin.svg'),
         }, {
           name: '车抵贷',
           link: 'credit',
+          vipGrid: true,
           img: require('../../../public/img/icon/chedidai.svg'),
         }, {
           name: '房抵贷',
           link: 'credit',
+          vipGrid: true,
           img: require('../../../public/img/icon/fangdidai.svg'),
         }, {
           name: '进度查询',
           link: 'credit',
+          vipGrid: false,
           img: require('../../../public/img/icon/chaxunjindu.svg'),
         }, {
           name: '个人中心',
           link: 'credit',
+          vipGrid: false,
           img: require('../../../public/img/icon/gerenzhongxin.svg'),
         },
       ],
@@ -247,7 +280,21 @@ export default {
       }]
     }
   },
-  methods: {},
+  methods: {
+    girdLink(link, vipGrid) { //判断跳转
+      if (vipGrid && this.userVip) { //用户是vip而且点击了vip选项
+        this.$router.push({
+          path: link,
+        })
+      } else if (!vipGrid) { //用户是没有点击vip选项
+        this.$router.push({
+          path: link,
+        })
+      } else { //用户不是vip点击了vip选项
+        this.toast = true
+      }
+    }
+  },
   mounted() {}
 }
 </script>

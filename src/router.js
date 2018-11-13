@@ -14,7 +14,7 @@ const router = new Router({
       path: '/',
       component: home,
       meta: {
-        title: '智贷金管家'
+        title: '智银家'
       },
     },
     {
@@ -69,14 +69,14 @@ const router = new Router({
       path: '*',
       component: home,
       meta: {
-        title: '智贷金管家'
+        title: '智银家'
       }
     },
   ]
 })
 
 router.beforeEach((to, from, next) => { /* 全局前置钩子 */
-  document.title = to.meta.title || '智贷金管家'
+  document.title = to.meta.title || '智银家'
   next()
 })
 router.beforeResolve((to, from, next) => { /* 全局解析守卫 */
