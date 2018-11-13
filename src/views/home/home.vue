@@ -201,7 +201,7 @@ export default {
           img: require('../../../public/img/icon/daikuan.svg'),
         }, {
           name: '保险',
-          link: 'credit',
+          link: 'insurance',
           vipGrid: false,
           img: require('../../../public/img/icon/baoxian.svg'),
         }, {
