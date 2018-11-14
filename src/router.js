@@ -4,6 +4,7 @@ const home = r => require.ensure([], () => r(require('./views/home/home')), 'hom
 const credit = r => require.ensure([], () => r(require('./views/credit/credit')), 'credit')
 const loans = r => require.ensure([], () => r(require('./views/loans/loans')), 'loans')
 const insurance = r => require.ensure([], () => r(require('./views/insurance/insurance')), 'insurance')
+const progress = r => require.ensure([], () => r(require('./views/progress/progress')), 'progress')
 const xinyongka = r => require.ensure([], () => r(require('./views/home/children/xinyongka')), 'xinyongka')
 const center = r => require.ensure([], () => r(require('./views/center/center')), 'center')
 const news = r => require.ensure([], () => r(require('./views/news/news')), 'news')
@@ -56,6 +57,14 @@ const router = new Router({
       component: insurance,
       meta: {
         title: '保险特卖平台'
+      },
+    },
+    {
+      path: '/progress',
+      name: 'progress',
+      component: progress,
+      meta: {
+        title: '进度查询'
       },
     },
     {

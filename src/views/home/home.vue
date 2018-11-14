@@ -49,10 +49,9 @@
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <group class="group">
+  <group class="daili group">
     <grid :show-lr-borders="false" :cols="3">
-      <grid-item :label="item.name" v-for="(item,index) in DailiList" :key="index">
-        <img slot="icon" :src="item.img">
+      <grid-item class="control" :class="'daili'+index" :label="item.name" v-for="(item,index) in DailiList" :key="index">
       </grid-item>
     </grid>
   </group>
@@ -62,7 +61,9 @@
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <panel header="" :footer="footer" :list="list" type="1"></panel>
+  <group class="group">
+    <panel header="" :footer="footer" :list="list" type="1"></panel>
+  </group>
   <div class="title">
     <h2>智贷金课堂</h2>
     <div class="title2">
@@ -71,7 +72,7 @@
   </div>
   <group class="group">
     <grid :show-lr-borders="false" :cols="3">
-      <grid-item :label="item.name" v-for="(item,index) in MoreList" :key="index">
+      <grid-item class="control" :label="item.name" v-for="(item,index) in MoreList" :key="index">
         <img slot="icon" :src="item.img">
       </grid-item>
     </grid>
@@ -82,7 +83,7 @@
       <span>尊享财富尊选,开启梦想生活</span>
     </div>
   </div>
-  <group>
+  <group class="group">
     <cell-box>
       常见问题常见问题常见问题常见问题常
     </cell-box>
@@ -143,7 +144,7 @@ export default {
   },
   data() {
     return {
-      userVip: false,//用户VIP权限
+      userVip: false, //用户VIP权限
       tab: 'home',
       toast: false,
       value: false,
@@ -241,12 +242,12 @@ export default {
           img: require('../../../public/img/icon/fangdidai.svg'),
         }, {
           name: '进度查询',
-          link: 'credit',
+          link: 'progress',
           vipGrid: false,
           img: require('../../../public/img/icon/chaxunjindu.svg'),
         }, {
           name: '个人中心',
-          link: 'credit',
+          link: 'center',
           vipGrid: false,
           img: require('../../../public/img/icon/gerenzhongxin.svg'),
         },
