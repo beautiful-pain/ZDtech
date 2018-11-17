@@ -11,7 +11,7 @@ const news = r => require.ensure([], () => r(require('./views/news/news')), 'new
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [{
       path: '/',
       component: home,
