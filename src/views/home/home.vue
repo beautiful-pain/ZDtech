@@ -144,7 +144,7 @@ export default {
   },
   data() {
     return {
-      userVip: false, //用户VIP权限
+      userVip: true, //用户VIP权限
       tab: 'home',
       toast: false,
       value: false,
@@ -212,12 +212,12 @@ export default {
           img: require('../../../public/img/icon/zhifu.svg'),
         }, {
           name: '车信贷',
-          link: 'credit',
+          link: 'pledge',
           vipGrid: true,
           img: require('../../../public/img/icon/chedidai.svg'),
         }, {
           name: '房信贷',
-          link: 'credit',
+          link: 'pledge',
           vipGrid: true,
           img: require('../../../public/img/icon/fangdidai.svg'),
         }, {
@@ -232,12 +232,12 @@ export default {
           img: require('../../../public/img/icon/gerenzhongxin.svg'),
         }, {
           name: '车抵贷',
-          link: 'credit',
+          link: 'pledge',
           vipGrid: true,
           img: require('../../../public/img/icon/chedidai.svg'),
         }, {
           name: '房抵贷',
-          link: 'credit',
+          link: 'pledge',
           vipGrid: true,
           img: require('../../../public/img/icon/fangdidai.svg'),
         }, {

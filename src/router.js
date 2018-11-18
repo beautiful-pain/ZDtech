@@ -3,6 +3,7 @@ import Router from 'vue-router'
 const home = r => require.ensure([], () => r(require('./views/home/home')), 'home')
 const credit = r => require.ensure([], () => r(require('./views/credit/credit')), 'credit')
 const loans = r => require.ensure([], () => r(require('./views/loans/loans')), 'loans')
+const pledge = r => require.ensure([], () => r(require('./views/pledge/pledge')), 'pledge')
 const insurance = r => require.ensure([], () => r(require('./views/insurance/insurance')), 'insurance')
 const progress = r => require.ensure([], () => r(require('./views/progress/progress')), 'progress')
 const xinyongka = r => require.ensure([], () => r(require('./views/home/children/xinyongka')), 'xinyongka')
@@ -49,6 +50,14 @@ const router = new Router({
       component: loans,
       meta: {
         title: '网贷超市'
+      },
+    },
+    {
+      path: '/pledge',
+      name: 'pledge',
+      component: pledge,
+      meta: {
+        title: '贷款'
       },
     },
     {
